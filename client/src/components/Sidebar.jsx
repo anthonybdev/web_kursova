@@ -54,10 +54,10 @@ const navItems = [
     text: "Transactions",
     icon: <ReceiptLongOutlined />,
   },
-  {
-    text: "Geography",
-    icon: <PublicOutlined />,
-  },
+  // {
+  //   text: "Geography",
+  //   icon: <PublicOutlined />,
+  // },
   {
     text: "Sales",
     icon: null,
@@ -66,10 +66,10 @@ const navItems = [
     text: "Overview",
     icon: <PointOfSaleOutlined />,
   },
-  {
-    text: "Daily",
-    icon: <TodayOutlined />,
-  },
+  // {
+  //   text: "Daily",
+  //   icon: <TodayOutlined />,
+  // },
   {
     text: "Monthly",
     icon: <CalendarMonthOutlined />,
@@ -78,18 +78,18 @@ const navItems = [
     text: "Breakdown",
     icon: <PieChartOutlined />,
   },
-  {
-    text: "Management",
-    icon: null,
-  },
-  {
-    text: "Admin",
-    icon: <AdminPanelSettingsOutlined />,
-  },
-  {
-    text: "Performance",
-    icon: <TrendingUpOutlined />,
-  },
+  // {
+  //   text: "Management",
+  //   icon: null,
+  // },
+  // {
+  //   text: "Admin",
+  //   icon: <AdminPanelSettingsOutlined />,
+  // },
+  // {
+  //   text: "Performance",
+  //   icon: <TrendingUpOutlined />,
+  // },
 ];
 
 const Sidebar = ({
@@ -220,12 +220,6 @@ const Sidebar = ({
                   {user.occupation}
                 </Typography>
               </Box>
-              <SettingsOutlined
-                sx={{
-                  color: theme.palette.secondary[300],
-                  fontSize: "25px ",
-                }}
-              />
             </FlexBetween>
           </Box>
         </Drawer>

@@ -1,8 +1,7 @@
-import React from "react";
+import React, { useEffect } from "react";
 import FlexBetween from "components/FlexBetween";
 import Header from "components/Header";
 import {
-  DownloadOutlined,
   Email,
   PointOfSale,
   PersonAdd,
@@ -10,7 +9,6 @@ import {
 } from "@mui/icons-material";
 import {
   Box,
-  Button,
   Typography,
   useTheme,
   useMediaQuery,
@@ -25,6 +23,10 @@ const Dashboard = () => {
   const theme = useTheme();
   const isNonMediumScreens = useMediaQuery("(min-width: 1200px)");
   const { data, isLoading } = useGetDashboardQuery();
+
+  useEffect(() => {
+    console.log(data, isLoading)
+  }, [data, isLoading])
 
   const columns = [
     {
@@ -41,6 +43,7 @@ const Dashboard = () => {
       field: "createdAt",
       headerName: "CreatedAt",
       flex: 1,
+      renderCell: (params) => new Date(params.value).toLocaleString(),
     },
     {
       field: "products",
@@ -63,18 +66,7 @@ const Dashboard = () => {
         <Header title="DASHBOARD" subtitle="Welcome to your dashboard" />
 
         <Box>
-          <Button
-            sx={{
-              backgroundColor: theme.palette.secondary.light,
-              color: theme.palette.background.alt,
-              fontSize: "14px",
-              fontWeight: "bold",
-              padding: "10px 20px",
-            }}
-          >
-            <DownloadOutlined sx={{ mr: "10px" }} />
-            Download Reports
-          </Button>
+          
         </Box>
       </FlexBetween>
 

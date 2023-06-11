@@ -37,6 +37,7 @@ const Transactions = () => {
       field: "createdAt",
       headerName: "CreatedAt",
       flex: 1,
+      renderCell: (params) => new Date(params.value).toLocaleString(),
     },
     {
       field: "products",

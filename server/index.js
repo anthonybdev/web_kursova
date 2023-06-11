@@ -17,17 +17,17 @@ import ProductStat from "./models/ProductStat.js";
 import Transaction from "./models/Transaction.js";
 import OverallStat from "./models/OverallStat.js";
 import AffiliateStat from "./models/AffiliateStat.js";
-import {
-  dataUser,
-  dataProduct,
-  dataProductStat,
-  dataTransaction,
-  dataOverallStat,
-  dataAffiliateStat,
-} from "./data/index.js";
+// import {
+//   dataUser,
+//   dataProduct,
+//   dataProductStat,
+//   dataTransaction,
+//   dataOverallStat,
+//   dataAffiliateStat,
+// } from "./data/index.js";
 
 /* CONFIGURATION */
-dotenv.config();
+dotenv.config({path: '../.env'});
 const app = express();
 app.use(express.json());
 app.use(helmet());
@@ -45,6 +45,8 @@ app.use("/sales", salesRoutes);
 
 /* MONGOOSE SETUP */
 const PORT = process.env.PORT || 9000;
+
+
 mongoose
   .connect(process.env.MONGO_URL, {
     useNewUrlParser: true,
